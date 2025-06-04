@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
     };
     
     // Send to all webhooks
-    const webhookPromises = webhookResult.rows.map(async (webhook: any) => {
+    const webhookPromises = webhookResult.rows.map(async (webhook) => {
       try {
         const response = await fetch(webhook.webhook_url, {
           method: 'POST',

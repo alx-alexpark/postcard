@@ -10,7 +10,7 @@ interface PostcardData {
 
 export default function PostcardPage() {
   const params = useParams();
-  const slug = params.slug as string;
+  const slug = params!.slug as string;
   const [postcardData, setPostcardData] = useState<PostcardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -55,6 +55,7 @@ export default function PostcardPage() {
       alert('Notification sent!');
     } catch (err) {
       alert('Failed to send notification');
+      console.error(err);
     } finally {
       setNotifying(false);
     }
@@ -102,7 +103,7 @@ export default function PostcardPage() {
               Message:
             </label>
             <p className="text-lg italic border-l-4 border-blue-500 pl-4 text-black">
-              "{postcardData.remark}"
+              &quot;{postcardData.remark}&quot;
             </p>
           </div>
         </div>
