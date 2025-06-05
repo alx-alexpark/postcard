@@ -89,6 +89,7 @@ export default function PostcardPage() {
     <div className="max-w-2xl mx-auto p-6 min-h-screen flex flex-col items-center justify-center">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full">
         <h1 className="text-3xl font-bold text-center mb-6 text-black">You got a postcard from Alex!</h1>
+        <h1 className="text-md font-bold text-center mb-6 text-black">Make sure to send pics on Slack :)</h1>
         
         <div className="space-y-4 mb-8">
           <div>
@@ -100,7 +101,7 @@ export default function PostcardPage() {
           
           <div>
             <label className="block text-sm font-medium text-black mb-2">
-              Message:
+              Remark:
             </label>
             <p className="text-lg italic border-l-4 border-blue-500 pl-4 text-black">
               &quot;{postcardData.remark}&quot;
